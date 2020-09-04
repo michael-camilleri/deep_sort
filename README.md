@@ -1,5 +1,7 @@
 # Deep SORT
 
+This version  is my fork with an implementation of the Lambda as per Eq(5) in the paper.
+
 ## Introduction
 
 This repository contains code for *Simple Online and Realtime Tracking with a Deep Association Metric* (Deep SORT).
