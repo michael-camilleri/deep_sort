@@ -93,14 +93,15 @@ class Tracker:
         """
         This implements the full lambda-based cost-metric. However, in doing so, it disregards
         the possibility to gate the position only which is provided by
-        linear_assignment.gate_cost_matrix().
+        linear_assignment.gate_cost_matrix(). Instead, I gate by everything.
 
         Note that the Mahalanobis distance is itself an unnormalised metric. Given the cosine
         distance being normalised, we employ a quick and dirty normalisation based on the
         threshold: that is, we divide the positional-cost by the gating threshold, thus ensuring
         that the valid values range 0-1.
 
-        Note also that the authors work with the squared distance. I also sqrt this, so that
+        Note also that the authors work with the squared distance. I also sqrt this, so that it
+        is more intuitive in terms of values.
         """
         # Compute First the Position-based Cost Matrix
         pos_cost = np.empty([len(track_indices), len(detection_indices)])
